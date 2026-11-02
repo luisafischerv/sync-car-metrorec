@@ -4,15 +4,13 @@
 #include <pthread.h>
 
 struct station {
-    pthread_mutex_t passengers_lock;
-    pthread_mutex_t boarding_lock;
+    pthread_mutex_t lock;
 
     int waiting_passengers;
     int free_seats;
     int boarding_passengers;
 
     pthread_cond_t car_arrived;
-    pthread_cond_t seat_taken;
     pthread_cond_t all_boarded;
 };
 
