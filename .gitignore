@@ -54,3 +54,5 @@ dkms.conf
 # debug information files
 *.dwo
 sync_car
+test_busywait
+test_limites
