@@ -1,1 +1,5 @@
 * text=auto eol=lf
+test_busywait.c export-ignore
+test_limites.c export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
