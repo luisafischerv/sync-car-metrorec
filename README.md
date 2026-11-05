@@ -21,8 +21,8 @@ dormirem, sem busy-wait, até o evento que esperam acontecer.
 | `sync_car.h` | Declaração da `struct station` e protótipos das 4 funções. A struct fica no header porque o runner declara `struct station` na pilha e precisa do seu tamanho. |
 | `sync_car.c` | Implementação das funções `station_init`, `station_wait_for_car`, `station_on_board` e `station_load_car`. |
 | `sync_car-runner.c` | Programa de teste fornecido pelo professor (não alterado). |
-| `test_busywait.c` | Teste auxiliar: 10 passageiros esperando sem vagão por 3 s; mede o tempo de CPU do processo para provar que não há busy-wait. |
-| `test_limites.c` | Teste auxiliar: caso inválido (`count` negativo) e caso limite (mais assentos que passageiros). |
+| `test_busywait.c` | Teste auxiliar (só no repositório do GitHub, não incluído no .tar): 10 passageiros esperando sem vagão por 3 s; mede o tempo de CPU do processo para provar que não há busy-wait. |
+| `test_limites.c` | Teste auxiliar (só no repositório do GitHub, não incluído no .tar): caso inválido (`count` negativo) e caso limite (mais assentos que passageiros). |
 | `Makefile` | Compila o executável `sync_car` (`make`) e remove os compilados (`make clean`). |
 | `evidencias.log` | Registro das sessões de terminal (`script -a`), usado como evidência no relatório. |
 
@@ -53,7 +53,7 @@ for i in $(seq 1 50); do ./sync_car > /dev/null || echo "FALHOU na execucao $i";
 
 Nenhuma linha `FALHOU` deve aparecer.
 
-Testes auxiliares:
+Testes auxiliares (arquivos disponíveis no repositório do GitHub, não incluídos no .tar):
 
 ```bash
 gcc -pthread test_busywait.c sync_car.c -o test_busywait && ./test_busywait
